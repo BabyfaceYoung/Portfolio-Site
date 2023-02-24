@@ -139,13 +139,13 @@ section {
     height: 100%;
  }
 
-.left-header{
+.header-content>.left-header{
   display: flex;
   align-items: center;
   position: relative;
 }
 
-.left-header>.h-shape{
+.header-content>.left-header>.h-shape{
   transition: all .4s ease-in-out;
   width: 65%;
   height: 100%;
@@ -157,7 +157,7 @@ section {
   clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
 }
 
-.image{
+.header-content>.left-header>.image{
   border-radius: var(--br-sm-2);
   width: 68%;
   height: 90%;
@@ -166,7 +166,7 @@ section {
   transition: all .4s ease-in-out;
 }
 
-.image>img{
+.header-content>.left-header>.image>img{
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -174,26 +174,26 @@ section {
   filter: grayscale(100%);
 }
 
-.image>img:hover{
+.header-content>.left-header>.image>img:hover{
     filter: grayscale(0);
   }
 
-.right-header{
+.header-content>.right-header{
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-right: 18rem;
 }
 
-.right-header>.name{
+.header-content>.right-header>.name{
   font-size: 3rem;
 }
 
-.right-header>.name>span{
+.header-content>.right-header>.name>span{
   color: var(--color-secondary);
 }
 
-.right-header>.name>p{
+.header-content>.right-header>p{
   margin: 1.5rem 0;
   line-height: 2rem;
 }
@@ -486,30 +486,28 @@ section {
 }
 
 /*Portfolio*/
-.port-text{
+.port-text {
   padding: 2rem 0;
   text-align: center;
 }
 
-.portfolios{
+.portfolios {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-gap: 2rem;
   margin-top: 3rem;
 }
-
-.portfolios>.portfolio-item{
+.portfolios .portfolio-item {
   position: relative;
-}
-
-.portfolios>.portfolio-item>img{
-  width: 100%;
-  height: 300px;
-  object-fit: contain;
   border-radius: 15px;
 }
-
-.portfolios>.portfolio-item>.hover-item{
+.portfolios>.portfolio-item>.image>img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.portfolios>.portfolio-item>.hover-item {
   width: 100%;
   height: 100%;
   background-color: var(--color-secondary);
@@ -522,52 +520,44 @@ section {
   align-items: center;
   flex-direction: column;
   opacity: 0;
-  scale: 0;
   transform: scale(0);
-  transition: all .4s ease-in-out;
-  
+  transition: all 0.4s ease-in-out;
 }
-
-.portfolios>.portfolio-item>.hover-item>h3{
+.portfolios>.portfolio-item>.hover-item>h3 {
   font-size: 1.5rem;
+  color: var(--color-white);
   margin-bottom: 1.5rem;
 }
-
-.portfolios>.portfolio-item>.hover-item>.icons{
+.portfolios>.portfolio-item>.hover-item>.icons {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.portfolios>.portfolio-item>.hover-item>.icons>.icon{
+.portfolios>.portfolio-item>.hover-item>.icons>.icon {
   background-color: var(--color-primary);
   border-radius: 50%;
   width: 50px;
   height: 50px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   margin: 0 1rem;
   cursor: pointer;
-  transition: all .4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
-
-.portfolios>.portfolio-item>.hover-item>.icons>.icon>i{
+.portfolios>.portfolio-item>.hover-item>.icons>.icon>i {
   font-size: 1.5rem;
   color: var(--color-white);
   margin: 0 1rem;
 }
-
-.portfolios>.portfolio-item>.hover-item>.icons>.icon:hover{
+.portfolios>.portfolio-item>.hover-item>.icons>.icon:hover {
   background-color: var(--color-white);
 }
-
-.portfolios>.portfolio-item>.hover-item>.icons>.icon:hover>i{
+.portfolios>.portfolio-item>.hover-item>.icons>.icon:hover>i {
   color: var(--color-primary);
-  
 }
 
-.portfolio-item:hover + .hover-item{
+.portfolio-item:hover .hover-item {
   opacity: 1;
   transform: scale(1);
 }
